@@ -35,19 +35,42 @@ The classes are:
 
 The dataset is loaded using `torchvision.datasets.CIFAR10`.
 
-## Models Implemented
+## Models Implemented and Their Architectures
+
+Three CNN-based models were implemented and evaluated on CIFAR-10 to compare baseline performance, architectural improvements, and transfer learning.
 
 ### 1. Baseline CNN
 
-A compact convolutional neural network with two convolutional layers, max pooling, and fully connected layers. This model establishes the baseline performance.
+A compact convolutional neural network that establishes baseline classification performance using two convolutional layers and three fully connected layers.
+
+**Architecture:**
+
+`Input (3×32×32) → Conv2D (3→6, 5×5) → ReLU → MaxPool → Conv2D (6→16, 5×5) → ReLU → MaxPool → Flatten (400) → FC (400→120) → ReLU → FC (120→84) → ReLU → FC (84→10)`
 
 ### 2. Improved CNN
 
-A deeper CNN using additional convolutional layers, batch normalization, and dropout to improve feature extraction and generalization.
+A deeper CNN designed to improve feature extraction and generalization. It incorporates batch normalization, additional convolutional layers, and dropout regularization.
+
+**Architecture:**
+
+`Input → Conv2D (3→32) → BatchNorm → ReLU → Conv2D (32→32) → BatchNorm → ReLU → MaxPool → Dropout → Conv2D (32→64) → BatchNorm → ReLU → Conv2D (64→64) → BatchNorm → ReLU → MaxPool → Dropout → Flatten (4096) → FC (4096→256) → ReLU → Dropout → FC (256→10)`
 
 ### 3. Pretrained ResNet-18
 
-A ResNet-18 architecture initialized with pretrained ImageNet weights and adapted for CIFAR-10 classification. The model is fine-tuned for the target dataset.
+A ResNet-18 model initialized with pretrained ImageNet weights and fine-tuned for CIFAR-10 classification. Its initial convolution is adapted for 32×32 images, the initial max-pooling layer is removed, and the final fully connected layer is replaced with a 10-class classifier.
+
+**Architecture:**
+
+`Input (3×32×32) → Adapted Conv2D → Residual Layer 1 → Residual Layer 2 → Residual Layer 3 → Residual Layer 4 → Adaptive Average Pooling → FC (512→10)`
+
+### Training Configuration
+
+- **Loss function:** Cross-Entropy Loss
+- **Optimizers:** Adam for the custom CNNs; Adam with separate learning rates for the ResNet backbone and classifier
+- **Data augmentation:** Random cropping and horizontal flipping during training
+- **Model selection:** Validation performance
+- **Final evaluation:** Held-out CIFAR-10 test set
+
 
 ## Model Evaluation
 
