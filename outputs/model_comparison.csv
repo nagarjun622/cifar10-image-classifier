@@ -1,0 +1,3 @@
+Model,Best Validation Accuracy (%),Best Validation Loss,Best Epoch
+Baseline CNN,71.3,0.8198175935745239,71
+Improved CNN,86.84,0.3847240914344788,100

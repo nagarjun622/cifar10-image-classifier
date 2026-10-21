@@ -1,0 +1,4 @@
+Model,Best Epoch,Best Validation Loss,Best Validation Accuracy (%)
+Baseline CNN,71,0.8198175935745239,71.3
+Improved CNN v2,100,0.3847240914344788,86.84
+Pretrained ResNet-18,9,0.23213794548660516,93.34

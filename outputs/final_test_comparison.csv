@@ -1,0 +1,4 @@
+Model,Test Loss,Test Accuracy (%)
+Pretrained ResNet-18,0.26739715070724485,92.12
+Improved CNN,0.41859461994171143,85.66
+Baseline CNN,0.8302720004081726,70.98
