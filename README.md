@@ -170,7 +170,7 @@ Once the project is pushed to GitHub:
 4. Set `app.py` as the main file.
 5. Deploy the application.
 
-**Live Demo:** Add your deployed Streamlit URL here.
+**Live Demo:** [Classifier](https://nagarjun622-cifar10-image-classifier-app-y4fsre.streamlit.app/)
 
 ## Technologies Used
 
