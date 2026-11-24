@@ -8,6 +8,8 @@ This project explores image classification using the CIFAR-10 dataset. It covers
 
 Three models are compared: a baseline CNN, an improved CNN, and a pretrained ResNet-18. The selected model is integrated into a Streamlit application that allows users to upload an image and view the predicted class and confidence scores.
 
+### **Live Demo:** [Classifier](https://nagarjun622-cifar10-image-classifier-app-y4fsre.streamlit.app/)
+
 ## Key Features
 
 - Exploratory data analysis and image visualization
@@ -192,8 +194,6 @@ Once the project is pushed to GitHub:
 3. Select the `main` branch.
 4. Set `app.py` as the main file.
 5. Deploy the application.
-
-**Live Demo:** [Classifier](https://nagarjun622-cifar10-image-classifier-app-y4fsre.streamlit.app/)
 
 ## Technologies Used
 
